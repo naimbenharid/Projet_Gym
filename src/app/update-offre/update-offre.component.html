@@ -1,0 +1,54 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <fieldset style="width:30%;">
+    <form>
+      <h1>Modifier Offre !</h1>
+      <table>
+        <tr>
+          <td> Nom :</td>
+          <td><input type="text" [(ngModel)]="currentOffre!.name" name="name" value=""></td>
+        </tr>
+
+        <tr>
+          <td>Duration :</td>
+          <td><input type="text" [(ngModel)]="currentOffre!.duration" name="duration" value=""></td>
+        </tr>
+
+
+        <tr>
+          <td> Pack :</td>
+          <select class="form-select " aria-label="Default select example"
+          [(ngModel)]="currentOffre!.myPacks" name="duration">
+          <option value="">choisir une Pack</option>
+           <option *ngFor="let c of packs" [ngValue]=c>
+           {{c.nomPack}}
+          </option>
+          </select>
+        </tr>
+        <tr>
+          <td>PrixPack :</td>
+          <td><input type="number" [(ngModel)]="currentOffre!.prix" name="prix" value=""></td>
+        </tr>
+
+        <tr>
+
+
+        <tr></tr>
+        <tr>
+
+         <td></td>  <td colspan="2">
+          <button type="submit" (click)="updateOffre()" class="btn btn-success">Modifier Offre</button>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</body>
+
+</html>

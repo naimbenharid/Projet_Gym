@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+
+          <th>Name</th>
+          </tr>
+        <tbody *ngFor="let pack of packs">
+          <tr>
+
+            <td>{{pack.nomPack}}</td>
+
+            <td><a class="btn btn-danger" (click)="supprimerPack(pack)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updatepack',pack.id]">Modifier</a></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div>
+   <div class="form-container">
+        <form>
+          <h1 class="form-header">Ajouter un CLient</h1>
+          <table>
+            <tr>
+              <td  style="padding-bottom: 30px;"> Nom :</td>
+              <input type="text" [(ngModel)]="newClient.name" name="Nom" class="form-control" >        </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Prenom :</td>
+              <input type="text" [(ngModel)]="newClient.lastName" name="prenom" class="form-control" >
+            </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Age :</td>
+              <input type="text" [(ngModel)]="newClient.age" name="age" class="form-control" >
+           </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Telephone:</td>
+            <input type="text" [(ngModel)]="newClient.phoneNumber" name="tel" class="form-control" >
+           </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Pack:</td>
+                <select class="form-select " aria-label="Default select example"
+                [(ngModel)]="newClient!.myOffre" name="pack">
+                <option value="">choisir une Pack</option>
+                 <option *ngFor="let c of packs" [ngValue]=c>
+                 {{c.nomPack}}
+                </option>
+                </select>
+            </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Date de Debut:</td>
+              <td>
+                <input type="date" [(ngModel)]="newClient.dateDeb!" name="datedeb" value="">
+              </td>
+
+            </tr>
+            <td>Nom Offre :</td>
+            <td>
+                <select class="form-select " aria-label="Default select example"
+                [(ngModel)]="dureesContrats" name="duration">
+                <option value="">choisir une offre</option>
+                 <option *ngFor="let b of dureesContrats" [ngValue]=b>
+                 {{b}}
+                </option>
+                </select>
+            <tr></tr>
+            <tr>
+              <button type="submit" (click)="addClient()" class="btn btn-success">ajouter Client</button>
+            </tr>
+          </table>
+        </form>
+    </div>
+  </div>
+</body>
+
+
+</html>
+<!-- <body>
+  <fieldset style="width:30%;">
+    <form>
+      <h1>Ajouter Client !</h1>
+      <table>
+        <tr>
+          <td> Nom :</td>
+          <input type="text" [(ngModel)]="newClient.name" name="Nom" class="form-control" >        </tr>
+
+        <tr>
+          <td>Prenom :</td>
+          <input type="text" [(ngModel)]="newClient.lastName" name="prenom" class="form-control" >
+        </tr>
+
+        <tr>
+          <td>Age :</td>
+          <input type="text" [(ngModel)]="newClient.age" name="age" class="form-control" >
+       </tr>
+
+        <tr>
+        <td>Telephone:</td>
+        <input type="text" [(ngModel)]="newClient.phoneNumber" name="tel" class="form-control" >
+       </tr>
+
+        <tr>
+          <td>Pack:</td>
+            <select class="form-select " aria-label="Default select example"
+            [(ngModel)]="newClient!.myOffre" name="pack">
+            <option value="">choisir une Pack</option>
+             <option *ngFor="let c of packs" [ngValue]=c>
+             {{c.nomPack}}
+            </option>
+            </select>
+        </tr>
+
+        <tr>
+          <td>Date de Debut:</td>
+          <td>
+            <input type="date" [(ngModel)]="newClient.dateDeb!" name="datedeb" value="">
+          </td>
+
+        </tr>
+        <td>Nom Offre :</td>
+        <td>
+            <select class="form-select " aria-label="Default select example"
+            [(ngModel)]="dureesContrats" name="duration">
+            <option value="">choisir une offre</option>
+             <option *ngFor="let b of dureesContrats" [ngValue]=b>
+             {{b}}
+            </option>
+            </select>
+        <tr></tr>
+        <tr>
+          <button type="submit" (click)="addClient()" class="btn btn-success">ajouter Client</button>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</body>  -->

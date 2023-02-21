@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=Ta, initial-scale=1.0">
+  <title>TAbleau</title>
+</head>
+<body>
+    <div class="table">
+        <div class="table_header">
+         <p> Search Client</p>
+          <div>
+            <input class="search-input"#searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            <button class="searching"> SEARCH</button>
+          </div>
+        </div>
+
+        <div class="table_section">
+          <table>
+            <thead>
+
+              <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>telephone</th>
+                <th>Age</th>
+                <th>pack</th>
+                <th>Abonnement</th>
+                <th>Date_Debut</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tbody *ngFor="let client of clients">
+              <tr>
+                <td>{{client?.name}}</td>
+                <td>{{client?.lastName}}</td>
+                <td>{{client?.phoneNumber}}</td>
+                <td>{{client?.age}}</td>
+                <td>{{client?.myOffre?.myPacks?.nomPack}}</td>
+                <td>{{client?.myOffre?.duration}}</td>
+                <td>{{client?.dateDeb}}</td>
+               <td>
+                <button><i class="fa fa-file-pen" (click)="supprimerClient(client)"></i></button>
+                <button><i class="fa fa-trash" [routerLink]="['/updateclient',client.id]"></i></button>
+               </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+<!--  <div> <form class="form-inline">
+      <div class="searchTerm ">
+            <label>Search Clients</label>
+      <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+      </div>
+      </form>
+    </div>
+  </tr>
+    <div class="container">
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <table class="table table-striped">
+            <tr>
+              <th>id</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Telephone</th>
+              <th>Age</th>
+              <th>Date Debut</th>
+              <th>myPack</th>
+              <th>duré </th>
+
+            </tr>
+            <tbody *ngFor="let client of clients">
+              <tr>
+                <td>{{client?.id}}</td>
+                <td>{{client?.name}}</td>
+                <td>{{client?.lastName}}</td>
+                <td>{{client?.phoneNumber}}</td>
+                <td>{{client?.age}}</td>
+                <td>{{client?.dateDeb}}</td>
+                <td>{{client?.myOffre?.myPacks?.nomPack}}</td>
+                <td>{{client?.myOffre?.duration}}</td>
+
+                <td><a class="btn btn-danger" (click)="supprimerClient(client)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateclient',client.id]">Modifier</a></td>
+
+              </tr>
+-->

@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+    <div>
+     <div class="form-container">
+          <form>
+            <h1 class="form-header">Ajouter un Pack</h1>
+            <table>
+              <tr>
+                <th> Nom :</th>
+                <td> <input type="text" [(ngModel)]="newPack!.nomPack" name="name" value=""></td>
+              </tr>
+              <tr>
+              <td></td>  <td colspan="2">
+                <button type="submit" (click)="addPack()" class="btn btn-success">ajouter Pack</button> </td>
+              </tr>
+            </table>
+          </form>
+      </div>
+    </div>
+</body>
+
+</html>

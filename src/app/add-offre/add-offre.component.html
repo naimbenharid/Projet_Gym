@@ -1,0 +1,96 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <div>
+   <div class="form-container">
+        <form>
+          <h1 class="form-header">Ajouter un Offre</h1>
+          <table>
+            <tr>
+              <td  style="padding-bottom: 30px;">Nom :</td>
+              <td><input type="text" [(ngModel)]="newOffre!.name" name="name" value=""></td>
+            </tr>
+
+
+            <tr>
+              <td  style="padding-bottom: 30px;">Duration :</td>
+              <td><input type="text" [(ngModel)]="newOffre!.duration" name="duration" value=""></td>
+            </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;"> Pack :</td>
+              <select class="form-select " aria-label="Default select example"
+              [(ngModel)]="newOffre!.myPacks" name="duration">
+              <option value="">choisir une Pack</option>
+               <option *ngFor="let c of packs" [ngValue]=c>
+               {{c.nomPack}}
+              </option>
+              </select>
+            </tr>
+
+            <tr>
+              <td  style="padding-bottom: 30px;">PrixPack :</td>
+              <td><input type="number" [(ngModel)]="newOffre!.prix" name="prix" value=""></td>
+
+
+            <tr>
+
+          </table>
+        </form>
+    </div>
+  </div>
+</body>
+
+
+</html>
+
+<!--
+<body>
+  <fieldset style="width:30%;">
+    <form>
+      <h1>Ajouter Offre !</h1>
+      <table>
+        <tr>
+          <td> Nom :</td>
+          <td><input type="text" [(ngModel)]="newOffre!.name" name="name" value=""></td>
+        </tr>
+
+        <tr>
+          <td>Duration :</td>
+          <td><input type="text" [(ngModel)]="newOffre!.duration" name="duration" value=""></td>
+        </tr>
+
+
+        <tr>
+          <td> Pack :</td>
+          <select class="form-select " aria-label="Default select example"
+          [(ngModel)]="newOffre!.myPacks" name="duration">
+          <option value="">choisir une Pack</option>
+           <option *ngFor="let c of packs" [ngValue]=c>
+           {{c.nomPack}}
+          </option>
+          </select>
+        </tr>
+        <tr>
+          <td>PrixPack :</td>
+          <td><input type="number" [(ngModel)]="newOffre!.prix" name="prix" value=""></td>
+        </tr>
+
+        <tr>
+
+
+        <tr></tr>
+        <tr>
+
+         <td></td>  <td colspan="2">
+          <button type="submit" (click)="addOffre()" class="btn btn-success">ajouter Offre</button>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</body> -->

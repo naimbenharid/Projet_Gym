@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <fieldset style="width:30%;">
+    <form>
+      <h1>Modifier Client !</h1>
+      <table>
+        <tr>
+          <td> Nom :</td>
+          <input type="text" [(ngModel)]="currentClient!.name" name="Nom" class="form-control" >        </tr>
+
+        <tr>
+          <td>Prenom :</td>
+          <input type="text" [(ngModel)]="currentClient!.lastName" name="prenom" class="form-control" >
+
+        </tr>
+
+        <tr>
+          <td>Age :</td>
+          <input type="text" [(ngModel)]="currentClient!.age" name="age" class="form-control" >        </tr>
+
+        <tr>
+          <td>Telephone:</td>
+            <td>  <input type="text" [(ngModel)]="currentClient!.phoneNumber" name="tel" class="form-control" >
+       </tr>
+
+
+        <tr>
+          <td>Pack:</td><td>
+            <select class="form-select " aria-label="Default select example"
+            [(ngModel)]="currentClient!.myOffre" name="pack">
+            <option value="">choisir une Pack</option>
+             <option *ngFor="let c of packs" [ngValue]=c>
+             {{c.nomPack}}
+            </option>
+            </select>
+
+        </tr>
+        <tr>
+          <td>Date de Debut:</td><td>
+            <input type="date" [(ngModel)]="currentClient!.dateDeb" name="datedeb" value=""></td>
+
+        </tr>
+        <td>Nom Offre :</td>
+        <td>
+            <select class="form-select " aria-label="Default select example"
+            [(ngModel)]="currentClient2.name" name="duration">
+            <option value="">choisir une offre</option>
+             <option *ngFor="let c of offres" [ngValue]=c>
+             {{c.name}}
+            </option>
+            </select>
+        <tr></tr>
+        <tr>
+          <button type="submit" (click)="updateClient()" class="btn btn-success">ajouter Client</button>
+        </tr>
+      </table>
+    </form>
+  </fieldset>
+</body>
+
+</html>

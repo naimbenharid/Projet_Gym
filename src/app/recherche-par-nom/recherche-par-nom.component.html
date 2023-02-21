@@ -1,0 +1,54 @@
+
+
+<!-- <div class="container">
+  <form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2 mt-2 ">
+  <label>Recherche CLient</label>
+  <tr><input type="text" class="form-control" [(ngModel)]="clientName" name="clientName" class="form-control"></tr>
+  <button type="submit" (click)="rechercherClient()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+  </div>
+  </form> -->
+<div> <form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2 mt-2 ">
+  <label>Search Clients</label>
+  <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+  </div>
+  </form>
+</div>
+
+
+
+
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th>id</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Telephone</th>
+          <th>Age</th>
+          <th>Date Debut</th>
+          <th>myPack</th>
+          <th>duré </th>
+
+        </tr>
+        <tbody *ngFor="let client of clients">
+          <tr>
+            <td>{{client.id}}</td>
+            <td>{{client.name}}</td>
+            <td>{{client.lastName}}</td>
+            <td>{{client.phoneNumber}}</td>
+            <td>{{client.age}}</td>
+            <td>{{client.dateDeb}}</td>
+            <td>{{client.myOffre?.duration}}</td>
+
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

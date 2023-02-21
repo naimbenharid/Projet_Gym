@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+
+          <th>Name</th>
+          <th>Duration</th>
+          <th>pack</th>
+          <th>Prix</th>
+
+
+        </tr>
+        <tbody *ngFor="let offre of offres">
+          <tr>
+
+            <td>{{offre?.name}}</td>
+            <td>{{offre?.duration}}</td>
+            <td>{{offre?.myPacks?.nomPack!}}</td>
+            <td>{{offre?.prix}}</td>
+            <td><a class="btn btn-danger" (click)="supprimerOffre(offre)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updateoffre',offre.id]">Modifier</a></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
